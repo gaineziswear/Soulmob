@@ -1,0 +1,58 @@
+{
+  "name": "soulmob-mobile",
+  "version": "0.4.0-beta",
+  "description": "SoulMob 0x04: The Symbiotic Self - Beta Mobile Application",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "tsc",
+    "build:client": "cd client && npm run build",
+    "start": "node dist/server/index.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint . --ext .ts,.tsx",
+    "db:push": "drizzle-kit generate && drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "keywords": [
+    "soulmob",
+    "ai-agent",
+    "mobile",
+    "quantum-logic",
+    "temporal-echo",
+    "environmental-orchestrator",
+    "intent-projection"
+  ],
+  "author": "SoulMob Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.1",
+    "pg": "^8.11.3",
+    "uuid": "^9.0.1",
+    "jsonwebtoken": "^9.1.2",
+    "bcryptjs": "^2.4.3",
+    "zod": "^3.22.4",
+    "axios": "^1.6.2",
+    "ws": "^8.15.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.6",
+    "@types/jsonwebtoken": "^9.0.7",
+    "typescript": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "drizzle-kit": "^0.20.14",
+    "vitest": "^1.1.0",
+    "@vitest/ui": "^1.1.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0"
+  }
+}
